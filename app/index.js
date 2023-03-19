@@ -13,12 +13,12 @@ const Home = () => {
                 options={{
                     headerStyle: { backgroundColor: COLORS.lightWhite },
                     headerShadowVisible: false,
-                    headerLeft: () => {
+                    headerLeft: () => (
                         <ScreenHeaderBtn iconUrl={icons.menu} dimensions="60%" />
-                    },
-                    headerRight: () => {
+                    ),
+                    headerRight: () => (
                         <ScreenHeaderBtn iconUrl={icons.profile} dimensions="100%" />
-                    },
+                    ),
                     headerTitle: ""
                 }}
             />
