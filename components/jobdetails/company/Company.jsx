@@ -7,7 +7,7 @@ import { checkImageURL } from "../../../utils";
 
 const Company = ({ companyLogo, companyName, jobTitle, location }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.logoBox}>
         <Image
           source={{
@@ -15,6 +15,7 @@ const Company = ({ companyLogo, companyName, jobTitle, location }) => {
               ? companyLogo
               : "https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NN1CW7diNmGXJfMicpY9eXHKV4sqzO5H.jpg",
           }}
+          style={styles.logoImage}
         />
       </View>
     </View>
