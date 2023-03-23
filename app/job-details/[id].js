@@ -12,7 +12,7 @@ import { View, Text,
 
  import useFetch from '../../hook/useFetch'
 
- const tabs = ['About', 'Qualifications', 'Responsibility']
+ const tabs = ['About', 'Qualifications', 'Responsibilities']
 
 const JobDetails = () => {
     const params = useSearchParams()
@@ -38,8 +38,11 @@ const JobDetails = () => {
                 return <JobAbout
                     info={data[0]?.job_description ?? 'No data provided'}
                 />
-            case 'Responsibility':
-                break;
+            case 'Responsibilities':
+                return <Specifics
+                    title='Responsibilities'
+                    points={data[0]?.job_highlights?.Responsibilities ?? ['N/A']}
+                />
             default:
                 break;
         }
