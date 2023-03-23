@@ -19,6 +19,11 @@ const JobDetails = () => {
     const { data, isLoading } = useFetch('job-details', {
         job_id: params.id
     })
+
+    const [refreshing, setrefreshing] = useState(false)
+
+    const onRefresh = () => {}
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite}}>
       <Stack.Screen
@@ -41,7 +46,13 @@ const JobDetails = () => {
             ),
             headerTitle: ''
         }}
-      ></Stack.Screen>
+      />
+      <>
+        <ScrollView
+            showsVerticalScrollIndicator={false}
+            refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+        ></ScrollView>
+      </>
     </SafeAreaView>
   )
 }
